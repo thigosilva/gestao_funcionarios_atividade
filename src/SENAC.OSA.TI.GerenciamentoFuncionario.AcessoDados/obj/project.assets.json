@@ -1,12 +1,29 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "SENAC.OSA.TI.GerenciamentoFuncionario.Comuns/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SENAC.OSA.TI.GerenciamentoFuncionario.Comuns/1.0.0": {
+      "type": "project",
+      "path": "../SENAC.OSA.TI.GerenciamentoFuncionario.Comuns/SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj",
+      "msbuildProject": "../SENAC.OSA.TI.GerenciamentoFuncionario.Comuns/SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj"
+      "SENAC.OSA.TI.GerenciamentoFuncionario.Comuns >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -44,8 +61,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj": {
-              "projectPath": "C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj"
+            "C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj": {
+              "projectPath": "C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj"
             }
           }
         }
@@ -77,16 +94,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Não é possível encontrar o projeto 'C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
-      "libraryId": "C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

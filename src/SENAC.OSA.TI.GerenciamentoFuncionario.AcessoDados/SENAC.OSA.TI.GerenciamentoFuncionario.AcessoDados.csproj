@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj" />
+    <ProjectReference Include="..\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj" />
   </ItemGroup>
 
 </Project>

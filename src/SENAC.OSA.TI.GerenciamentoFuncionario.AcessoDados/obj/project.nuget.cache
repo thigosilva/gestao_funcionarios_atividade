@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DRt+JTxlZYD8u8/2BAHvPcVFulWmrB+gjypmePP93PMq8AQTBfw6Kqxzt358t0EaM0rg9pgD0QhR6ft2cwHXbQ==",
-  "success": false,
+  "dgSpecHash": "43qSMBbXHE9WPp7/Q+ap+QRcWaacZ7Ooc4efzwODTiP7iySKzMyauekMnB9L0pAQT/4i31ZPqQayEPfD0NOSzw==",
+  "success": true,
   "projectFilePath": "C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.AcessoDados\\SENAC.OSA.TI.GerenciamentoFuncionario.AcessoDados.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Não é possível encontrar o projeto 'C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
-      "libraryId": "C:\\SENAC.OSA.TI.GerenciamentoFuncionario\\src\\src\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns\\SENAC.OSA.TI.GerenciamentoFuncionario.Comuns.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }
