@@ -3,20 +3,19 @@ using System.Linq;
 
 namespace GerenciamentoFuncionario.Comuns.Modelos
 {
-    public class Funcionario
+    public class Funcionario : EntidadeBase
     {
-        public Funcionario(int id, string nomeCompleto, int cargoId, 
-            bool eBebedorCafe)
+
+        public Funcionario(int id, string nomeCompleto, int cargoId,
+            bool eBebedorCafe = false)
         {
             Id = id;
             NomeCompleto = nomeCompleto;
             CargoId = cargoId;
             EBebedorCafe = eBebedorCafe;
             DataEntrada = DateTime.Now;
-
         }
 
-        public int Id { get; protected set; }
         private string _nomeCompleto;
 
         public string NomeCompleto
@@ -26,7 +25,7 @@ namespace GerenciamentoFuncionario.Comuns.Modelos
                 var pedacosNome = value.Trim().Split(" ");
                 PrimeiroNome = pedacosNome[0];
                 UltimoNome = pedacosNome.Last();
-                _nomeCompleto = value; 
+                _nomeCompleto = value;
             }
         }
 
@@ -35,5 +34,14 @@ namespace GerenciamentoFuncionario.Comuns.Modelos
         public string PrimeiroNome { get; protected set; }
         public string UltimoNome { get; protected set; }
         public DateTimeOffset DataEntrada { get; protected set; }
+    }
+
+    public class Teste{
+        public void Testando()
+        {
+            var funcLucas = new Funcionario(1,"Lucas", 1, true);
+            var funcEmerson = new Funcionario(2,"Emerson", 1);
+            
+        }
     }
 }
