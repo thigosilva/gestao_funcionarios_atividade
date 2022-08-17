@@ -7,6 +7,26 @@ namespace GerenciamentoFuncionario.AcessoDados
 {
     public class FuncionarioProvedorDados : IFuncionarioProvedorDados
     {
+        private List<Funcionario> Funcionarios { get; set; }
+
+        public FuncionarioProvedorDados()
+        {
+            Funcionarios = new List<Funcionario> {
+                new Funcionario(1, "Fulano de Tal", 1, false),
+                new Funcionario(2, "Ciclano de Tal", 2, true),
+                new Funcionario(3, "Beltrano de Tal", 3, true)
+            }; 
+        }
+
+        public void AtualizaCargo(Cargo cargo)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void AtualizaFuncionario(Funcionario funcionario)
+        {
+            throw new System.NotImplementedException();
+        }
 
         public IEnumerable<Cargo> CarregaCargos()
         {
@@ -20,11 +40,32 @@ namespace GerenciamentoFuncionario.AcessoDados
 
         public IEnumerable<Funcionario> CarregaFuncionarios()
         {
-            return new List<Funcionario> {
-                //new Funcionario(1, "Fulano de Tal", 1, false),
-                //new Funcionario(2, "Ciclano de Tal", 2, true),
-                //new Funcionario(3, "Beltrano de Tal", 3, true)
-            };
+            return Funcionarios;
+        }
+
+        public void ExcluiCargo(Cargo cargo)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ExcluiFuncionario(Funcionario funcionario)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Cargo RecuperaCargoPorId(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Funcionario RecuperaFuncionarioPorId(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SalvaCargo(Cargo cargo)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void SalvaFuncionario(Funcionario funcionario)

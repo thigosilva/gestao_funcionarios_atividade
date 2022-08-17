@@ -35,13 +35,4 @@ namespace GerenciamentoFuncionario.Comuns.Modelos
         public string UltimoNome { get; protected set; }
         public DateTimeOffset DataEntrada { get; protected set; }
     }
-
-    public class Teste{
-        public void Testando()
-        {
-            var funcLucas = new Funcionario(1,"Lucas", 1, true);
-            var funcEmerson = new Funcionario(2,"Emerson", 1);
-            
-        }
-    }
 }
