@@ -6,10 +6,10 @@ namespace GerenciamentoFuncionario.Comuns.Modelos
     public class Funcionario : EntidadeBase
     {
 
-        public Funcionario(int id, string nomeCompleto, int cargoId,
+        public Funcionario(string nomeCompleto, int cargoId,
             bool eBebedorCafe = false)
         {
-            Id = id;
+            //Id = id;
             NomeCompleto = nomeCompleto;
             CargoId = cargoId;
             EBebedorCafe = eBebedorCafe;
@@ -22,7 +22,7 @@ namespace GerenciamentoFuncionario.Comuns.Modelos
         {
             get { return _nomeCompleto; }
             set {
-                var pedacosNome = value.Trim().Split(" ");
+                string[] pedacosNome = value.Trim().Split(" ");
                 PrimeiroNome = pedacosNome[0];
                 UltimoNome = pedacosNome.Last();
                 _nomeCompleto = value;
