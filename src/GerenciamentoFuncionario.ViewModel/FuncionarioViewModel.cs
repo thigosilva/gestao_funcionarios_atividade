@@ -3,7 +3,7 @@ using GerenciamentoFuncionario.Comuns.ProvedorDados;
 
 namespace GerenciamentoFuncionario.ViewModel
 {
-    public partial class FuncionarioViewModel : ViewModelBase
+    public class FuncionarioViewModel : ViewModelBase
     {
         private readonly IFuncionarioProvedorDados _funcionarioProvedorDados;
         private readonly FuncionarioModel _funcionarioModel;
@@ -23,7 +23,7 @@ namespace GerenciamentoFuncionario.ViewModel
                 {
                     _funcionarioModel.NomeCompleto = value;
                     RaisePropertyChanged();
-                    RaisePropertyChanged(nameof(PodeSalvar));
+                    //RaisePropertyChanged(nameof(PodeSalvar));
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace GerenciamentoFuncionario.ViewModel
             }
         }
 
-        public bool PodeSalvar => !string.IsNullOrWhiteSpace(NomeCompleto);
+        //public bool PodeSalvar => !string.IsNullOrWhiteSpace(NomeCompleto);
 
         public void Salvar()
         {

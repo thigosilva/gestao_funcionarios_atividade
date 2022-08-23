@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\GerenciamentoFuncionario.AcessoDados\GerenciamentoFuncionario.AcessoDados.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Controls\HeaderControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -15,7 +15,7 @@ namespace GerenciamentoFuncionario.AcessoDados
                 new Funcionario("Fulano de Tal", 1, false),
                 new Funcionario("Ciclano de Tal", 2, true),
                 new Funcionario("Beltrano de Tal", 3, true)
-            }; 
+            };
         }
 
         public void AtualizaFuncionario(Funcionario funcionario)

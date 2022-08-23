@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:GerenciamentoFuncionario.WinUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:GerenciamentoFuncionario.WinUI.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:controls="using:GerenciamentoFuncionario.WinUI.Controls"
     mc:Ignorable="d">
 
     <Grid>
@@ -20,7 +21,7 @@
         
         <!--Cabeçalho-->
         <controls:HeaderControl Grid.ColumnSpan="2"  />
-
+        
         <!--Navegação-->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -41,11 +42,15 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <TextBox Header="Nome completo" Margin="10" />
-            <DatePicker Grid.Row="1" Header="Digite sua data de nascimento" Margin="10" />
-            <ComboBox Grid.Row="2" Header="Cargo" Margin="10" HorizontalAlignment="Stretch" />
+            <TextBox x:Name="NomeCompleto" Header="Nome completo" Margin="10" />
+            <DatePicker
+                
+                Grid.Row="1" Header="Digite sua data de nascimento" Margin="10" />
+            <ComboBox x:Name="Cargo" Grid.Row="2" Header="Cargo" Margin="10" HorizontalAlignment="Stretch" />
             <CheckBox Grid.Row="3" Content="Bebe café?" Margin="10" />
-            <Button Grid.Row="4" Content="Save" Margin="10 10 10 30"
+            <Button 
+               
+                Grid.Row="4" Content="Save" Margin="10 10 10 30"
                     VerticalAlignment="Bottom" HorizontalAlignment="Left" />
         </Grid>
         

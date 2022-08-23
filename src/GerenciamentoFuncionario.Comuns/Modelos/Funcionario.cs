@@ -21,7 +21,8 @@ namespace GerenciamentoFuncionario.Comuns.Modelos
         public string NomeCompleto
         {
             get { return _nomeCompleto; }
-            set {
+            set
+            {
                 string[] pedacosNome = value.Trim().Split(" ");
                 PrimeiroNome = pedacosNome[0];
                 UltimoNome = pedacosNome.Last();
