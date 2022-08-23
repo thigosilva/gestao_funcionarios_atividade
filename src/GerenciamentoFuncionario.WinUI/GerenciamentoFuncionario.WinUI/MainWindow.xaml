@@ -12,28 +12,33 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <!--<RowDefinition /> A mesma coisa do comando de cima (*) valor padrão para quando não receber nada-->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
+
         <!--Cabeçalho-->
         <controls:HeaderControl Grid.ColumnSpan="2"  />
-        
+
         <!--Navegação-->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Button Content="Atualizar" Margin="10" />
-            <ListView Grid.Row="1" />
+            <Button Content="Atualizar" Margin="10" Click="{x:Bind ViewModel.Carregar}" />
+            <ListView Grid.Row="1" 
+                      ItemsSource="{x:Bind ViewModel.Funcionarios, Mode=OneWay}"
+                      SelectedItem="{x:Bind ViewModel.FuncionarioSelecionado, Mode=TwoWay}"
+                      DisplayMemberPath="NomeCompleto"
+                      />
         </Grid>
-        
+
         <!--Área principal-->
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Grid.Row="1" 
+              Grid.Column="1"
+              Visibility="{x:Bind ViewModel.FuncionarioEstaSelecionado, Mode=OneWay}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -42,17 +47,45 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="NomeCompleto" Header="Nome completo" Margin="10" />
-            <DatePicker
-                
-                Grid.Row="1" Header="Digite sua data de nascimento" Margin="10" />
-            <ComboBox x:Name="Cargo" Grid.Row="2" Header="Cargo" Margin="10" HorizontalAlignment="Stretch" />
-            <CheckBox Grid.Row="3" Content="Bebe café?" Margin="10" />
+            <TextBox 
+                x:Name="NomeCompleto" 
+                Header="Nome completo" 
+                PlaceholderText="Digite seu nome completo"
+                Text="{x:Bind ViewModel.FuncionarioSelecionado.NomeCompleto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="10" />
+            
+            <DatePicker    
+                Grid.Row="1" 
+                Header="Digite sua data de nascimento" 
+                Margin="10"
+                />
+            <ComboBox 
+                x:Name="Cargo" 
+                Grid.Row="2" 
+                Header="Cargo" 
+                Margin="10" 
+                HorizontalAlignment="Stretch"
+                ItemsSource="{x:Bind ViewModel.Cargos, Mode=OneWay}"
+                DisplayMemberPath="CargoNome"
+                SelectedValuePath="Id"
+                SelectedValue="{x:Bind ViewModel.FuncionarioSelecionado.CargoId, Mode=TwoWay}"
+                />
+            <CheckBox 
+                Grid.Row="3" 
+                Content="Bebe café?" 
+                Margin="10"
+                IsChecked="{x:Bind ViewModel.FuncionarioSelecionado.EBebedorCafe, Mode=TwoWay}"
+                />
             <Button 
-               
-                Grid.Row="4" Content="Save" Margin="10 10 10 30"
-                    VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+                IsEnabled="{x:Bind ViewModel.FuncionarioSelecionado.PodeSalvar, Mode=OneWay}"
+                Click="{x:Bind ViewModel.FuncionarioSelecionado.Salvar}"
+                Grid.Row="4" 
+                Content="Save" 
+                Margin="10 10 10 30"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left" 
+                />
         </Grid>
-        
+
     </Grid>
 </Window>

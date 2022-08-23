@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\GerenciamentoFuncionario.AcessoDados\GerenciamentoFuncionario.AcessoDados.csproj" />
+    <ProjectReference Include="..\..\GerenciamentoFuncionario.Comuns\GerenciamentoFuncionario.Comuns.csproj" />
+    <ProjectReference Include="..\..\GerenciamentoFuncionario.ViewModel\GerenciamentoFuncionario.ViewModel.csproj" />
   </ItemGroup>
 
   <ItemGroup>

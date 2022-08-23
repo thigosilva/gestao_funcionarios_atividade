@@ -1,5 +1,5 @@
 ﻿using GerenciamentoFuncionario.AcessoDados;
-using GerenciamentoFuncionario.Comuns.Modelos;
+using GerenciamentoFuncionario.ViewModel;
 using Microsoft.UI.Xaml;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -12,14 +12,19 @@ namespace GerenciamentoFuncionario.WinUI
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        private readonly FuncionarioProvedorDados _funcionarioProvedorDados;
-
         public MainWindow()
         {
-            _funcionarioProvedorDados = new FuncionarioProvedorDados();
             this.InitializeComponent();
+            ViewModel = new MainWindowViewModel(new FuncionarioProvedorDados(), new CargoProvedorDados());
+            this.Activated += MainWindow_Activated;
         }
 
-        
+        private void MainWindow_Activated(object sender, WindowActivatedEventArgs args)
+        {
+            if (ViewModel.Funcionarios.Count == 0)
+                ViewModel.Carregar();
+        }
+
+        public MainWindowViewModel ViewModel { get; }
     }
 }

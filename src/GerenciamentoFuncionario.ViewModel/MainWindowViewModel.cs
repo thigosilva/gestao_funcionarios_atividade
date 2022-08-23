@@ -8,33 +8,69 @@ namespace GerenciamentoFuncionario.ViewModel
     public class MainWindowViewModel : ViewModelBase
     {
         private readonly IFuncionarioProvedorDados _funcionarioProvedorDados;
-        //controlar os cargos
-        private readonly FuncionarioViewModel _funcionarioViewModel;
-        private FuncionarioModel _funcionarioSelecionado;
+        private readonly ICargoProvedorDados _cargoProvedorDados;
+        private FuncionarioViewModel _funcionarioSelecionadoViewModel;
 
-        public MainWindowViewModel(IFuncionarioProvedorDados funcionarioProvedorDados)
+        public MainWindowViewModel(IFuncionarioProvedorDados funcionarioProvedorDados,
+            ICargoProvedorDados cargoProvedorDados)
         {
             _funcionarioProvedorDados = funcionarioProvedorDados;
+            _cargoProvedorDados = cargoProvedorDados;
         }
 
         public ObservableCollection<FuncionarioViewModel> Funcionarios { get; } = new();
         public ObservableCollection<Cargo> Cargos { get; } = new();
 
-
-        public FuncionarioModel FuncionarioSelecionado
+        public FuncionarioViewModel FuncionarioSelecionado
         {
-            get => _funcionarioSelecionado;
+            get => _funcionarioSelecionadoViewModel;
             set
             {
-                if (_funcionarioSelecionado != value)
+                if (_funcionarioSelecionadoViewModel != value)
                 {
-                    _funcionarioSelecionado = value;
+                    _funcionarioSelecionadoViewModel = value;
                     RaisePropertyChanged();
+                    RaisePropertyChanged(nameof(FuncionarioEstaSelecionado));
                 }
             }
         }
 
-        //CONTINUAR
+        public bool FuncionarioEstaSelecionado => FuncionarioSelecionado != null;
 
+        public void Carregar()
+        {
+            CarregaFuncionarios();
+            CarregaCargos();
+        }
+
+        private void CarregaFuncionarios()
+        {
+            var funcionarios = _funcionarioProvedorDados.CarregaFuncionarios();
+            Funcionarios.Clear();
+
+            foreach (var funcionario in funcionarios)
+            {
+                Funcionarios.Add(
+                    new FuncionarioViewModel(
+                        new FuncionarioModel
+                        {
+                            NomeCompleto = funcionario.NomeCompleto,
+                            CargoId = funcionario.CargoId,
+                            EBebedorCafe = funcionario.EBebedorCafe
+                        }, _funcionarioProvedorDados)
+                );
+            }
+        }
+
+        private void CarregaCargos()
+        {
+            var cargos = _cargoProvedorDados.CarregaCargos();
+            Cargos.Clear();
+
+            foreach (var cargo in cargos)
+            {
+                Cargos.Add(cargo);
+            }
+        }
     }
 }
