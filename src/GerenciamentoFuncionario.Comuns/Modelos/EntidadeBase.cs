@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GerenciamentoFuncionario.Comuns.Modelos
+﻿namespace GerenciamentoFuncionario.Comuns.Modelos
 {
     public abstract class EntidadeBase
     {
