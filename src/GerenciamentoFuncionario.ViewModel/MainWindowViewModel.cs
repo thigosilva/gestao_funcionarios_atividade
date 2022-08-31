@@ -1,5 +1,6 @@
 ﻿using GerenciamentoFuncionario.Comuns.Modelos;
 using GerenciamentoFuncionario.Comuns.ProvedorDados;
+using System;
 using System.Collections.ObjectModel;
 
 namespace GerenciamentoFuncionario.ViewModel
@@ -21,6 +22,7 @@ namespace GerenciamentoFuncionario.ViewModel
         public ObservableCollection<FuncionarioViewModel> Funcionarios { get; } = new();
         public ObservableCollection<Cargo> Cargos { get; } = new();
 
+
         public FuncionarioViewModel FuncionarioSelecionado
         {
             get => _funcionarioSelecionadoViewModel;
@@ -30,12 +32,11 @@ namespace GerenciamentoFuncionario.ViewModel
                 {
                     _funcionarioSelecionadoViewModel = value;
                     RaisePropertyChanged();
-                    RaisePropertyChanged(nameof(FuncionarioEstaSelecionado));
                 }
             }
         }
 
-        public bool FuncionarioEstaSelecionado => FuncionarioSelecionado != null;
+        //public bool FuncionarioEstaSelecionado => FuncionarioSelecionado != null;
 
         public void Carregar()
         {
@@ -43,34 +44,14 @@ namespace GerenciamentoFuncionario.ViewModel
             CarregaCargos();
         }
 
+        private void CarregaCargos()
+        {
+            throw new NotImplementedException();
+        }
+
         private void CarregaFuncionarios()
         {
             var funcionarios = _funcionarioProvedorDados.CarregaFuncionarios();
-            Funcionarios.Clear();
-
-            foreach (var funcionario in funcionarios)
-            {
-                Funcionarios.Add(
-                    new FuncionarioViewModel(
-                        new FuncionarioModel
-                        {
-                            NomeCompleto = funcionario.NomeCompleto,
-                            CargoId = funcionario.CargoId,
-                            EBebedorCafe = funcionario.EBebedorCafe
-                        }, _funcionarioProvedorDados)
-                );
-            }
-        }
-
-        private void CarregaCargos()
-        {
-            var cargos = _cargoProvedorDados.CarregaCargos();
-            Cargos.Clear();
-
-            foreach (var cargo in cargos)
-            {
-                Cargos.Add(cargo);
-            }
         }
     }
 }
