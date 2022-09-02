@@ -2,6 +2,7 @@
 using GerenciamentoFuncionario.Comuns.ProvedorDados;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace GerenciamentoFuncionario.ViewModel
 {
@@ -46,12 +47,39 @@ namespace GerenciamentoFuncionario.ViewModel
 
         private void CarregaCargos()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void CarregaFuncionarios()
         {
             var funcionarios = _funcionarioProvedorDados.CarregaFuncionarios();
+
+            //foreach (var f in funcionarios)
+            //{
+            //    Funcionarios.Add(
+            //        new FuncionarioViewModel(
+            //            new FuncionarioModel
+            //            {
+            //                NomeCompleto = f.NomeCompleto,
+            //                CargoId = f.CargoId,
+            //                EBebedorCafe = f.EBebedorCafe
+            //            }, _funcionarioProvedorDados)
+            //        );
+            //}
+
+            funcionarios.ToList().ForEach(f =>
+            {
+                Funcionarios.Add(
+                    new FuncionarioViewModel(
+                        new FuncionarioModel
+                        {
+                            NomeCompleto = f.NomeCompleto,
+                            CargoId = f.CargoId,
+                            EBebedorCafe = f.EBebedorCafe
+                        }, _funcionarioProvedorDados)
+                    );
+            });
+
         }
     }
 }

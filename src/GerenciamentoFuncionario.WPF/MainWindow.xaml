@@ -37,7 +37,7 @@
         <!--Área principal-->
         <Grid Grid.Row="1" 
               Grid.Column="1"
-              Visibility="{Binding ViewModel.FuncionarioEstaSelecionado, Mode=OneWay}"
+              Visibility="{Binding FuncionarioEstaSelecionado, Mode=OneWay}"
               >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -54,7 +54,7 @@
             <TextBox 
                 Grid.Row="1" 
                 x:Name="NomeCompleto" 
-                Text="{Binding ViewModel.FuncionarioSelecionado.NomeCompleto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding FuncionarioSelecionado.NomeCompleto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Margin="10" />
 
             <TextBlock 
@@ -73,17 +73,17 @@
                 Grid.Row="5" 
                 Margin="10" 
                 HorizontalAlignment="Stretch"
-                ItemsSource="{Binding ViewModel.Cargos, Mode=OneWay}"
+                ItemsSource="{Binding Cargos, Mode=OneWay}"
                 DisplayMemberPath="CargoNome"
                 SelectedValuePath="Id"
-                SelectedValue="{Binding ViewModel.FuncionarioSelecionado.CargoId, Mode=TwoWay}"
+                SelectedValue="{Binding FuncionarioSelecionado.CargoId, Mode=TwoWay}"
                 />
             
             <CheckBox 
                 Grid.Row="6" 
                 Content="Bebe café?" 
                 Margin="10"
-                IsChecked="{Binding ViewModel.FuncionarioSelecionado.EBebedorCafe, Mode=TwoWay}"
+                IsChecked="{Binding FuncionarioSelecionado.EBebedorCafe, Mode=TwoWay}"
                 />
             <!--<Button 
                 IsEnabled="{Binding ViewModel.FuncionarioSelecionado.PodeSalvar, Mode=OneWay}"
@@ -95,7 +95,7 @@
                 HorizontalAlignment="Left" 
                 />-->
             <Button 
-                Command="{Binding ViewModel.FuncionarioSelecionado.ComandoSalvar, Mode=OneWay}"
+                Command="{Binding FuncionarioSelecionado.ComandoSalvar, Mode=OneWay}"
                 Grid.Row="8" 
                 Content="Save" 
                 Margin="10 10 10 30"

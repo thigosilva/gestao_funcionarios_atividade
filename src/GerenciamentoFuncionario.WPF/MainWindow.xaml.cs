@@ -32,6 +32,7 @@ namespace GerenciamentoFuncionario.WPF
                 new CargoProvedorDados()
                 );
 
+            DataContext = _viewModel;
             Loaded += MainWindow_Loaded;
         }
 
