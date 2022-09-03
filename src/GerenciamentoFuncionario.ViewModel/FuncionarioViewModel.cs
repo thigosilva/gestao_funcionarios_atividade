@@ -1,5 +1,6 @@
 ﻿using GerenciamentoFuncionario.Comuns.Modelos;
 using GerenciamentoFuncionario.Comuns.ProvedorDados;
+using GerenciamentoFuncionario.ViewModel.Comandos;
 
 namespace GerenciamentoFuncionario.ViewModel
 {
@@ -8,10 +9,14 @@ namespace GerenciamentoFuncionario.ViewModel
         private readonly IFuncionarioProvedorDados _funcionarioProvedorDados;
         private readonly FuncionarioModel _funcionarioModel;
 
+        public DelegarComando ComandoSalvar { get; }
+
         public FuncionarioViewModel(FuncionarioModel funcionarioModel, IFuncionarioProvedorDados funcionarioProvedorDados)
         {
             _funcionarioProvedorDados = funcionarioProvedorDados;
             _funcionarioModel = funcionarioModel;
+
+            ComandoSalvar = new DelegarComando(Salvar);
         }
 
         public string NomeCompleto

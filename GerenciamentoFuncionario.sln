@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoFuncionario.Vi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{18576BE6-457C-497E-9DFF-FDFBADA8C62E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoFuncionario.WPF", "src\GerenciamentoFuncionario.WPF\GerenciamentoFuncionario.WPF.csproj", "{21E8730B-E93F-48FD-A6C5-E13255249029}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoFuncionario.WPF", "src\GerenciamentoFuncionario.WPF\GerenciamentoFuncionario.WPF.csproj", "{21E8730B-E93F-48FD-A6C5-E13255249029}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
