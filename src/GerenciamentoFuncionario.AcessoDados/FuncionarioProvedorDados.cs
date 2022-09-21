@@ -21,22 +21,22 @@ namespace GerenciamentoFuncionario.AcessoDados
 
         public void AtualizaFuncionario(Funcionario funcionario)
         {
-            //throw new System.NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public void ExcluiFuncionario(Funcionario funcionario)
         {
-            //throw new System.NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public Funcionario RecuperaFuncionarioPorId(int id)
         {
-            //throw new System.NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public void SalvaFuncionario(Funcionario funcionario)
         {
-            //Debug.WriteLine($"Funcionário salvo: {funcionario.PrimeiroNome}");
+            Debug.WriteLine($"Funcionário salvo: {funcionario.PrimeiroNome}");
         }
 
         public IEnumerable<Funcionario> CarregaFuncionarios()
