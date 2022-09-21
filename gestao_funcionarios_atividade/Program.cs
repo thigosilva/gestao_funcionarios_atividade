@@ -4,9 +4,12 @@ namespace gestao_funcionarios_atividade
 {
     class Program
     {
-        static void Main(string[] args)
+        public Cargos(int id, string cargoNome)
         {
-            
+            id = id;
+            CargoNome = cargoNome;
         }
+
+        public string CargoNome { get; }
     }
 }

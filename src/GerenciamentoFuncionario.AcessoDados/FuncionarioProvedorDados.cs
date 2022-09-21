@@ -12,30 +12,31 @@ namespace GerenciamentoFuncionario.AcessoDados
         public FuncionarioProvedorDados()
         {
             Funcionarios = new List<Funcionario> {
-                new Funcionario("Fulano de Tal", 1, false),
-                new Funcionario("Ciclano de Tal", 2, true),
-                new Funcionario("Beltrano de Tal", 3, true)
+                new Funcionario("Thiago Silva", 1, false),
+                new Funcionario("Henrique Alexandre", 2, true),
+                new Funcionario("Hudson Silva Alexandre", 3, true)
+                new Funcionario("Marinele de Jesus", 4, true)
             };
         }
 
         public void AtualizaFuncionario(Funcionario funcionario)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         public void ExcluiFuncionario(Funcionario funcionario)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         public Funcionario RecuperaFuncionarioPorId(int id)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         public void SalvaFuncionario(Funcionario funcionario)
         {
-            Debug.WriteLine($"Funcionário salvo: {funcionario.PrimeiroNome}");
+            //Debug.WriteLine($"Funcionário salvo: {funcionario.PrimeiroNome}");
         }
 
         public IEnumerable<Funcionario> CarregaFuncionarios()

@@ -18,8 +18,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoFuncionario.WPF", "src\GerenciamentoFuncionario.WPF\GerenciamentoFuncionario.WPF.csproj", "{21E8730B-E93F-48FD-A6C5-E13255249029}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gestao_funcionarios_atividade", "gestao_funcionarios_atividade", "{A21409ED-E4F9-4E67-8971-5DC05EEDD043}"
+	ProjectSection(SolutionItems) = preProject
+		pogo.cs = pogo.cs
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gestao_funcionarios_atividade", "gestao_funcionarios_atividade\gestao_funcionarios_atividade.csproj", "{43474D1F-273F-415F-ABAC-464F61B3FAD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gestao_funcionarios_atividade", "gestao_funcionarios_atividade\gestao_funcionarios_atividade.csproj", "{43474D1F-273F-415F-ABAC-464F61B3FAD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
